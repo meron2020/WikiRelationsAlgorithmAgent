@@ -3,6 +3,7 @@ package org.wikiRelationsAlgorithm;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.wikiRelationsAlgorithm.core.RankingThreadList;
 import org.wikiRelationsAlgorithm.resources.RankingResource;
 
 public class wikiRelationsAlgorithmApplication extends Application<wikiRelationsAlgorithmConfiguration> {
@@ -25,7 +26,9 @@ public class wikiRelationsAlgorithmApplication extends Application<wikiRelations
     public void run(final wikiRelationsAlgorithmConfiguration configuration,
                     final Environment environment) {
         // TODO: implement application
-        environment.jersey().register(new RankingResource());
+
+        RankingThreadList rankingThreadList = new RankingThreadList();
+        environment.jersey().register(new RankingResource(rankingThreadList));
     }
 
 }
