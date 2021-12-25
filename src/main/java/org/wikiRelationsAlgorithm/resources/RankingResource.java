@@ -10,10 +10,10 @@ import java.util.Hashtable;
 
 @Path("/ranking")
 public class RankingResource {
-    RankingThreadList rankingThreadList = new RankingThreadList();
+    RankingThreadList rankingThreadList;
 
-    public RankingResource() {
-
+    public RankingResource(RankingThreadList rankingThreadList) {
+        this.rankingThreadList = rankingThreadList;
     }
 
     @POST
