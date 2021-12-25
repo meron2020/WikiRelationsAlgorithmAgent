@@ -6,6 +6,10 @@ import java.util.Hashtable;
 public class RankingThreadList {
     public ArrayList<RankingThread> rankingThreads = new ArrayList<>();
 
+    public int rankingThreadsListSize() {
+        return rankingThreads.size();
+    }
+
     public void addRankingThread(LinksObject linksObject) {
         RankingThread rankingThread = new RankingThread(linksObject);
         this.rankingThreads.add(rankingThread);
