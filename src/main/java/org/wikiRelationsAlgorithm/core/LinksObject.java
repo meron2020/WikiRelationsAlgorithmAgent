@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 public class LinksObject {
-    @JsonProperty("originalLink")
+    @JsonProperty("Original Link")
     public String originalLink;
-    @JsonProperty("links")
+    @JsonProperty("Links")
     public ArrayList<String> links;
     @JsonProperty("id")
     public Integer id;
