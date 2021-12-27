@@ -13,20 +13,16 @@ import java.util.Hashtable;
 
 public class HeadMasterCommunicationHandler {
     RankingThreadList rankingThreadList;
-    String selfUrl;
 
-    public HeadMasterCommunicationHandler(RankingThreadList rankingThreadList, String selfUrl) {
+    public HeadMasterCommunicationHandler(RankingThreadList rankingThreadList) {
         this.rankingThreadList = rankingThreadList;
-        this.selfUrl = selfUrl;
     }
 
-    public void sendHeadMasterAgentInfo() {
+    public void sendHeadMasterAgentInfo() throws IOException, InterruptedException {
         HashMap<String, Object> dataHashMap = new HashMap<>();
-        dataHashMap.put("agent_url", selfUrl);
-        dataHashMap.put("thread_list_size", rankingThreadList.rankingThreadsListSize());
+        dataHashMap.put("type", "Ranking");
 
+        HTTPRequestsClass.sendPOSTRequest(dataHashMap);
     }
-
-
 
 }
