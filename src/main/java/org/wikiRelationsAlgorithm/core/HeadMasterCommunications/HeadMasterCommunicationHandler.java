@@ -20,7 +20,7 @@ public class HeadMasterCommunicationHandler {
 
     public void sendHeadMasterAgentInfo(String port) throws IOException, InterruptedException {
         HashMap<String, Object> dataHashMap = new HashMap<>();
-        dataHashMap.put("type", "Ranking");
+        dataHashMap.put("type", "ranking");
         dataHashMap.put("port", port);
 
         HTTPRequestsClass.sendPOSTRequest(dataHashMap);
