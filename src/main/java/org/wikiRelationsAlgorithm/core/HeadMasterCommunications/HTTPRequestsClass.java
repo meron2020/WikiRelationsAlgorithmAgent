@@ -10,7 +10,7 @@ import java.net.http.HttpResponse;
 import java.util.HashMap;
 
 public class HTTPRequestsClass {
-    static String headMasterUrl = "http://127.0.0.1:8080/agents/";
+    static String headMasterUrl = "http://127.0.0.1:8080/communication/";
 
     private static final HttpClient httpClient = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_2)
