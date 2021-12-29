@@ -18,11 +18,18 @@ public class HeadMasterCommunicationHandler {
         this.rankingThreadList = rankingThreadList;
     }
 
-    public void sendHeadMasterAgentInfo() throws IOException, InterruptedException {
+    public void sendHeadMasterAgentInfo(String port) throws IOException, InterruptedException {
         HashMap<String, Object> dataHashMap = new HashMap<>();
         dataHashMap.put("type", "Ranking");
+        dataHashMap.put("port", port);
 
         HTTPRequestsClass.sendPOSTRequest(dataHashMap);
+    }
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        RankingThreadList rankingThreadList = new RankingThreadList();
+        HeadMasterCommunicationHandler headMasterCommunicationHandler = new HeadMasterCommunicationHandler(rankingThreadList);
+        headMasterCommunicationHandler.sendHeadMasterAgentInfo("8080");
     }
 
 }
