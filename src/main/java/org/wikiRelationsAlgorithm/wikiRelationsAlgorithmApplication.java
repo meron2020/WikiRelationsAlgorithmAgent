@@ -33,7 +33,7 @@ public class wikiRelationsAlgorithmApplication extends Application<wikiRelations
 
         RankingThreadList rankingThreadList = new RankingThreadList();
         HeadMasterCommunicationHandler headMasterCommunicationHandler = new HeadMasterCommunicationHandler(rankingThreadList);
-        headMasterCommunicationHandler.sendHeadMasterAgentInfo();
+        headMasterCommunicationHandler.sendHeadMasterAgentInfo("9000");
         environment.jersey().register(new RankingResource(rankingThreadList));
         environment.jersey().register(new HeadMasterCommsResource(rankingThreadList));
     }
