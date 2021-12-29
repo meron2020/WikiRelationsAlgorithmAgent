@@ -19,7 +19,7 @@ public class HeadMasterCommsResource {
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Integer getFinishedRankings() {
+    public Integer getRankingListSize() {
         return this.rankingThreadList.rankingThreadsListSize();
     }
 
